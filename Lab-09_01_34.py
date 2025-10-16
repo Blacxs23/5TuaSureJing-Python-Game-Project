@@ -3,8 +3,8 @@
 #34
 
 while True:  #infinity loop
-    num1,num2 = map(int,input().split())     
-    answer = num1 + num2
-    if num1 == 0 and num2 == 0:
-        break
-    print(f"{num1} + {num2} = {answer}")
+    num1,num2 = map(int,input().split()) #input data
+    answer = num1 + num2 #sum
+    if num1 == 0 and num2 == 0: #if both is 0 = break
+        break #end loop
+    print(f"{num1} + {num2} = {answer}") #output
