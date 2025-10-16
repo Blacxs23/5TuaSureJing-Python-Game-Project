@@ -8,4 +8,4 @@ for a in range(integar1,integer2+1): #get a base
         answer = a * i #answer of multiply
         print(f"{a} * {i} = {answer}") #output multi
         if i == 12: # make a line between
-            print("......................")
+            print("......................") #make a line
