@@ -8,3 +8,5 @@ while True:  #infinity loop
     if num1 == 0 and num2 == 0: #if both is 0 = break
         break #end loop
     print(f"{num1} + {num2} = {answer}") #output
+
+#kuy
