@@ -10,11 +10,11 @@ screen = pygame.display.set_mode((screen_w,screen_h))
 pygame.display.set_caption("Tug of War")
 
 # background 1
-bg_start = pygame.image.load("bg/tow_bg1.jpg")
+bg_start = pygame.image.load("pygame_app/bg/tow_bg1.jpg")
 screen.blit(bg_start,(0,0))
 
 # logo
-logo = pygame.image.load("logo/tow_logo.png")
+logo = pygame.image.load("pygame_app/logo/tow_logo.png")
 logo = pygame.transform.scale(logo,(502,278))
 logo_rect = logo.get_rect()
 logo_rect.centerx = screen_w // 2
