@@ -1,5 +1,4 @@
 import pygame
-import sys
 
 pygame.init()
 
@@ -20,6 +19,7 @@ logo_rect = logo.get_rect()
 logo_rect.centerx = screen_w // 2
 logo_rect.centery = 150
 screen.blit(logo,logo_rect)
+
 
 
 run = True
