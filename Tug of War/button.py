@@ -7,7 +7,7 @@ def play_nomal():
     play_default_rect = play_default.get_rect()
     play_default_rect.centerx = screen_w // 2
     play_default_rect.centery = 300
-    screen.blit(play_default,play_default_rect)
+    # screen.blit(play_default,play_default_rect)
 
 
 # control button
