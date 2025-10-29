@@ -20,6 +20,8 @@ logo_rect.centerx = screen_w // 2
 logo_rect.centery = 150
 screen.blit(logo,logo_rect)
 
+
+
 run = True
 
 fps = 60
