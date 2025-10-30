@@ -37,7 +37,8 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-
+            
+            #botton_skill_player1
             keys = pygame.key.get_pressed()
             if keys[pygame.K_q]: #Darkness
                 print("Prevents the opponent from using skills for about 2 seconds")
@@ -48,6 +49,16 @@ while run:
             if keys[pygame.K_v]: #Steal Process
                 print('Steal the process of pressing the opposite side for 1.5 seconds')
 
+            #botton_skill_player2
+            if keys[pygame.K_i]: #Darkness
+                print("Prevents the opponent from using skills for about 2 seconds")
+            if keys[pygame.K_o]: #Freeze
+                print("Freeze the opposite side for 0.5 seconds, they can't do anything")   
+            if keys[pygame.K_p]: #Multiply
+                print("Multiply the process by 1.2 times the normal for 2 seconds")
+            if keys[pygame.K_m]: #Steal Process
+                print('Steal the process of pressing the opposite side for 1.5 seconds')
+            
     pygame.display.update()
     clock.tick(fps)
 
