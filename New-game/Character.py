@@ -1,9 +1,13 @@
 import pygame
 
+# create class to import to main
 class Fighter():
+    
+    # auto this def
     def __init__(self, x, y):
         self.rect = pygame.Rect((x,y, 80,180))
 
+    # move function
     def move(self, screen_width):
         speed = 10
         dx = 0
