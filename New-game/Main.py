@@ -12,6 +12,16 @@ pygame.display.set_caption("Game Araiwa")
 clock = pygame.time.Clock()
 FPS = 60
 
+
+#กำหนดสี
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+
+#ฟังชั่นวาดหลอดเลือด
+def draw_health_bar(health, x, y):
+    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
+
 #create two instances of fighters
 fighter_1 = Fighter(150,450)
 fighter_2 = Fighter(1000,450)
@@ -24,6 +34,15 @@ def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (screen_width, screen_height))
     screen.blit(scaled_bg, (0,0))
 
+
+#กำหนดสี
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+
+
+
+
 #game loop
 run = True
 while run: #all running game code must in this while loop
@@ -34,6 +53,10 @@ while run: #all running game code must in this while loop
     #draw bg
     draw_bg()
 
+    #แสดงหลอดเลือด
+    draw_health_bar(fighter_1.health, 30, 20)
+    draw_health_bar(fighter_2.health, 850, 20)
+    
     #move fighter
     fighter_1.move(screen_width)
 
