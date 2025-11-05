@@ -38,6 +38,7 @@ RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 
+
 #game loop
 run = True
 while run: #all running game code must in this while loop
