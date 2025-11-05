@@ -53,7 +53,7 @@ while run: #all running game code must in this while loop
     draw_health_bar(fighter_2.health, 650, 20)
     
     #move fighter
-    fighter_1.move(screen_width, screen)
+    fighter_1.move(screen_width, screen_height)
 
     #draw fighters
     fighter_1.draw(screen)
