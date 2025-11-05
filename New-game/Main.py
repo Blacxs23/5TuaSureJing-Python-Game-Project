@@ -21,10 +21,6 @@ WHITE = (255, 255, 255)
 def draw_health_bar(health, x, y):
     pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
 
-#create two instances of fighters
-fighter_1 = Fighter(150,350)
-fighter_2 = Fighter(900,350)
-
 #import background image
 bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png").convert_alpha()
 
@@ -32,6 +28,17 @@ bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png").convert_alpha
 def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (screen_width, screen_height))
     screen.blit(scaled_bg, (0,0))
+
+# load spritesheets
+punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png").convert_alpha()
+# tu_man = pygame.image.load("")
+
+#define number of steps in each animation
+PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
+
+#create two instances of fighters
+fighter_1 = Fighter(150,350, punya_sheet, PUNYA_ANIMATION_STEPS)
+fighter_2 = Fighter(900,350)
 
 #กำหนดสี
 RED = (255, 0, 0)
