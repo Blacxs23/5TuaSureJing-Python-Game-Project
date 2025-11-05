@@ -7,6 +7,7 @@ class Fighter():
     def __init__(self, x, y):
         self.rect = pygame.Rect((x,y, 80,180))
         self.vel_y = 0
+        self.jump = False
         self.health = 100
         self.attack_type = 0  
 
@@ -26,8 +27,10 @@ class Fighter():
         if key[pygame.K_d]:
             dx = speed
         #jump
-        if key[pygame.K_w]:
+        if key[pygame.K_w] and self.jump == False:
             self.vel_y = -30
+            self.jump = True
+
         #apply gravity
         self.vel_y += gravity
 
@@ -40,6 +43,7 @@ class Fighter():
             dx = screen_width - self.rect.right
         if self.rect.bottom + dy > screen_height -50 :
             self.vel_y = 0
+            self.jump = False
             dy = screen_height - 50 - self.rect.bottom
 
         #update player position
