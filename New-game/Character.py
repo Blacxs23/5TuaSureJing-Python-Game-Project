@@ -62,7 +62,7 @@ class Fighter():
         self.rect.y += dy
 
     def attack(self, surface):
-      attacking_rect = pygame.Rect(self.rect.centerx, self.rect.y, 2 * self.rect.width, self.rect.height)
+      attacking_rect = pygame.Rect(self.rect.centerx, self.rect.y,2*self.rect.width, self.rect.height)
       pygame.draw.rect(surface, (0, 255, 0), attacking_rect)    
 
 
