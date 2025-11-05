@@ -13,12 +13,12 @@ clock = pygame.time.Clock()
 FPS = 60
 
 
-#กำหนดสี
+#กำหนดสี  #stamp
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 
-#ฟังชั่นวาดหลอดเลือด
+#ฟังชั่นวาดหลอดเลือด  #stamp
 def draw_health_bar(health, x, y):
     pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
 
@@ -51,7 +51,7 @@ while run: #all running game code must in this while loop
     #draw bg
     draw_bg()
 
-    #แสดงหลอดเลือด
+    #แสดงหลอดเลือด   #stamp
     draw_health_bar(fighter_1.health, 30, 20)
     draw_health_bar(fighter_2.health, 650, 20)
     
