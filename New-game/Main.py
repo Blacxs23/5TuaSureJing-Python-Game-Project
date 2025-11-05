@@ -12,7 +12,6 @@ pygame.display.set_caption("DTI Fighter")
 clock = pygame.time.Clock()
 FPS = 60
 
-
 #กำหนดสี  #stamp
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
@@ -34,12 +33,10 @@ def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (screen_width, screen_height))
     screen.blit(scaled_bg, (0,0))
 
-
 #กำหนดสี
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
-
 
 #game loop
 run = True
