@@ -22,7 +22,7 @@ def draw_health_bar(health, x, y):
     pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
 
 #import background image
-bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png").convert_alpha()
+bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
 
 #function for drawing background
 def draw_bg():
@@ -34,10 +34,10 @@ punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png"
 # tu_man = pygame.image.load("")
 
 #define number of steps in each animation
-PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
+# PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 
 #create two instances of fighters
-fighter_1 = Fighter(150,350, punya_sheet, PUNYA_ANIMATION_STEPS)
+fighter_1 = Fighter(150,350)#, punya_sheet, PUNYA_ANIMATION_STEPS)
 fighter_2 = Fighter(900,350)
 
 #กำหนดสี
@@ -61,7 +61,7 @@ while run: #all running game code must in this while loop
     draw_health_bar(fighter_2.health, 600, 20)
     
     #move fighter
-    fighter_1.move(screen_width, screen_height)
+    # fighter_1.move(screen_width, screen_height, screen)
 
     #draw fighters
     fighter_1.draw(screen)
