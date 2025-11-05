@@ -51,7 +51,7 @@ while run: #all running game code must in this while loop
 
     #แสดงหลอดเลือด   #stamp
     draw_health_bar(fighter_1.health, 30, 20)
-    draw_health_bar(fighter_2.health, 650, 20)
+    draw_health_bar(fighter_2.health, 600, 20)
     
     #move fighter
     fighter_1.move(screen_width, screen_height)
