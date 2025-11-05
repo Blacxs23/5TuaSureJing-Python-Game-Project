@@ -27,7 +27,7 @@ fighter_1 = Fighter(150,450)
 fighter_2 = Fighter(1000,450)
 
 #import background image
-bg_image = pygame.image.load("New-game/asset/dirt.jpg").convert_alpha()
+bg_image = pygame.image.load("New-game/asset/bg1_dome.png").convert_alpha()
 
 #function for drawing background
 def draw_bg():
