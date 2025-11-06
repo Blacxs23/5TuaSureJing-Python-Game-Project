@@ -21,9 +21,10 @@ def main_game(screen):
     #ฟังชั่นวาดหลอดเลือด  #stamp
     def draw_health_bar(health, x, y):
        ratio = health / 100
-    pygame.draw.rect(screen, WHITE, (x - 2, y - 2, 404, 34))
-    pygame.draw.rect(screen, RED, (x, y, 400, 30))
-    pygame.draw.rect(screen, YELLOW, (x, y, 400 * ratio, 30))
+    
+    #pygame.draw.rect(screen, WHITE, (x - 2, y - 2, 404, 34))
+    #pygame.draw.rect(screen, RED, (x, y, 400, 30))
+    #spygame.draw.rect(screen, YELLOW, (x, y, 400 * ratio, 30))
 
     #import background image
     bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
