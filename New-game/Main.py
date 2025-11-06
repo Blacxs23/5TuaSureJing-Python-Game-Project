@@ -43,12 +43,6 @@ punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png"
 fighter_1 = Fighter(150,350)#, punya_sheet, PUNYA_ANIMATION_STEPS)
 fighter_2 = Fighter(900,350)
 
-#กำหนดสี
-RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
-WHITE = (255, 255, 255)
-
-
 #game loop
 run = True
 while run: #all running game code must in this while loop
