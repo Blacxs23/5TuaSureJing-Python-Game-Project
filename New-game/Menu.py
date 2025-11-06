@@ -102,7 +102,6 @@ def menu():
         screen.blit(bg_start,(0,0))
         screen.blit(logo,logo_rect)
 
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
