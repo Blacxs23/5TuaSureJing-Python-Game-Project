@@ -1,6 +1,6 @@
 import pygame
 import sys
-# from Main import run_game 
+from Main import main_game
 
 pygame.init()
 
@@ -8,11 +8,11 @@ pygame.init()
 screen_w = 1024
 screen_h = 576
 screen = pygame.display.set_mode((screen_w,screen_h))
-pygame.display.set_caption("DTI Fighter")
+pygame.display.set_caption("DTI Fighter - Menu")
 
 # background 1
 bg_start = pygame.image.load("New-game/asset/bg/bg1_dome.png")
-screen.blit(bg_start,(0,0))
+# screen.blit(bg_start,(0,0))
 
 # logo
 logo = pygame.image.load("New-game/asset/logo/dti_fighter_logo.png")
@@ -20,7 +20,7 @@ logo = pygame.transform.scale(logo,(502,278))
 logo_rect = logo.get_rect()
 logo_rect.centerx = screen_w // 2
 logo_rect.centery = 175
-screen.blit(logo,logo_rect)
+# screen.blit(logo,logo_rect)
 
 # ------play button------
 
@@ -90,67 +90,76 @@ current_play = "play"
 current_control = "control"
 current_credit = "credit"
 
-run = True
-
-fps = 60
 clock = pygame.time.Clock()
+FPS = 60
 
-while run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
+def menu():
+    run = True
+    while run:
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            mouse_pos = event.pos
+        clock.tick(FPS)
 
-            if current_play == "play":
-                if play_default_rect.collidepoint(mouse_pos):
-                    print("play!")
+        screen.blit(bg_start,(0,0))
+        screen.blit(logo,logo_rect)
 
-            if current_control == "control":
-                if control_default_rect.collidepoint(mouse_pos):
-                    print("control!")
-                   
-            if current_credit == "credit":
-                if credit_default_rect.collidepoint(mouse_pos):
-                    print("credit!")
 
-    current_mouse_pos = pygame.mouse.get_pos()
-    hovering_play_button = False
-    hovering_control_button = False
-    hovering_credit_button = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
 
-    if current_play == "play":
-        if play_default_rect.collidepoint(current_mouse_pos):
-            hovering_play_button = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
 
-    if current_play == "play":
-        if hovering_play_button:
-            screen.blit(play_click,play_default_rect)
-        else:
-            screen.blit(play_default,play_default_rect)
+                if current_play == "play":
+                    if play_default_rect.collidepoint(mouse_pos):
+                        main_game(screen)
+                        print("play!")
 
-    if current_control == "control":
-        if control_default_rect.collidepoint(current_mouse_pos):
-            hovering_control_button = True
+                if current_control == "control":
+                    if control_default_rect.collidepoint(mouse_pos):
+                        print("control!")
+                    
+                if current_credit == "credit":
+                    if credit_default_rect.collidepoint(mouse_pos):
+                        print("credit!")
 
-    if current_control == "control":
-        if hovering_control_button:
-            screen.blit(control_click,control_default_rect)
-        else:
-            screen.blit(control_default,control_default_rect)
+        current_mouse_pos = pygame.mouse.get_pos()
+        hovering_play_button = False
+        hovering_control_button = False
+        hovering_credit_button = False
 
-    if current_credit == "credit":
-        if credit_default_rect.collidepoint(current_mouse_pos):
-            hovering_credit_button = True
+        if current_play == "play":
+            if play_default_rect.collidepoint(current_mouse_pos):
+                hovering_play_button = True
 
-    if current_credit == "credit":
-        if hovering_credit_button:
-            screen.blit(credit_click,credit_default_rect)
-        else:
-            screen.blit(credit_default,credit_default_rect)
+        if current_play == "play":
+            if hovering_play_button:
+                screen.blit(play_click,play_default_rect)
+            else:
+                screen.blit(play_default,play_default_rect)
 
-    pygame.display.update()
-    clock.tick(fps)
+        if current_control == "control":
+            if control_default_rect.collidepoint(current_mouse_pos):
+                hovering_control_button = True
 
-pygame.quit()
+        if current_control == "control":
+            if hovering_control_button:
+                screen.blit(control_click,control_default_rect)
+            else:
+                screen.blit(control_default,control_default_rect)
+
+        if current_credit == "credit":
+            if credit_default_rect.collidepoint(current_mouse_pos):
+                hovering_credit_button = True
+
+        if current_credit == "credit":
+            if hovering_credit_button:
+                screen.blit(credit_click,credit_default_rect)
+            else:
+                screen.blit(credit_default,credit_default_rect)
+
+        pygame.display.update()
+    pygame.quit()
+
+if __name__ == "__main__":
+    menu()
