@@ -46,8 +46,6 @@ def main_game(screen):
     YELLOW = (255, 255, 0)
     WHITE = (255, 255, 255)
 
-
-    #game loop
     run = True
     while run: #all running game code must in this while loop
         
@@ -63,7 +61,6 @@ def main_game(screen):
         
         #move fighter
         fighter_1.move(screen_width, screen_height, screen)
-
 
         #draw fighters
         fighter_1.draw(screen)
