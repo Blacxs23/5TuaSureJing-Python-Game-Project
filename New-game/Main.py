@@ -19,7 +19,10 @@ WHITE = (255, 255, 255)
 
 #ฟังชั่นวาดหลอดเลือด  #stamp
 def draw_health_bar(health, x, y):
-    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
+    ratio = health / 100
+    pygame.draw.rect(screen, WHITE, (x - 2, y - 2, 404, 34))
+    pygame.draw.rect(screen, RED, (x, y, 400, 30))
+    pygame.draw.rect(screen, YELLOW, (x, y, 400 * ratio, 30))
 
 #import background image
 bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
@@ -57,8 +60,8 @@ while run: #all running game code must in this while loop
     draw_bg()
 
     #แสดงหลอดเลือด   #stamp
-    #draw_health_bar(fighter_1.health, 30, 20)
-    #draw_health_bar(fighter_2.health, 600, 20)
+    draw_health_bar(fighter_1.health, 30, 20)
+    draw_health_bar(fighter_2.health, 595, 20)
     
     #move fighter
     fighter_1.move(screen_width, screen_height, screen)

@@ -9,7 +9,7 @@ class Fighter():
         self.vel_y = 0
         self.jump = False
         self.attack_type = 0
-         
+        self.health = 100
 
     # move function
     def move(self, screen_width,screen_height, surface):
