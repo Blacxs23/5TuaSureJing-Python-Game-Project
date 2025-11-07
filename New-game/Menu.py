@@ -131,7 +131,6 @@ def menu():
             if play_default_rect.collidepoint(current_mouse_pos):
                 hovering_play_button = True
 
-        if current_play == "play":
             if hovering_play_button:
                 screen.blit(play_click,play_default_rect)
             else:
@@ -141,7 +140,6 @@ def menu():
             if control_default_rect.collidepoint(current_mouse_pos):
                 hovering_control_button = True
 
-        if current_control == "control":
             if hovering_control_button:
                 screen.blit(control_click,control_default_rect)
             else:
@@ -151,7 +149,6 @@ def menu():
             if credit_default_rect.collidepoint(current_mouse_pos):
                 hovering_credit_button = True
 
-        if current_credit == "credit":
             if hovering_credit_button:
                 screen.blit(credit_click,credit_default_rect)
             else:
