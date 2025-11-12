@@ -25,6 +25,16 @@ def main_game(screen):
         pygame.draw.rect(screen, RED, (x, y, 400, 30))
         pygame.draw.rect(screen, YELLOW, (x, y, 400 * ratio, 30))
 
+    # define fighter variables
+    PUNYA_SIZE = 500
+    PUNYA_SCALE = 1
+    PUNYA_OFFSET = [0,0]
+    PUNYA_DATA = [PUNYA_SIZE,PUNYA_SCALE,PUNYA_OFFSET]
+    TU_MAN_SIZE = 500
+    TU_MAN_SCALE = 1
+    TU_MAN_OFFSET = [0,0]
+    TU_MAN_DATA = [TU_MAN_SIZE,TU_MAN_SCALE,TU_MAN_OFFSET]
+
     #import background image
     bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
 
@@ -35,14 +45,15 @@ def main_game(screen):
 
     # load spritesheets
     punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png").convert_alpha()
-    # tu_man = pygame.image.load("")
+    tu_man_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png").convert_alpha()
 
     #define number of steps in each animation
-    # PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
+    PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
+    TU_MAN_ANIMATION_SETPS = [8, 8, 1, 8, 8, 3, 7]
 
     #create two instances of fighters
-    fighter_1 = Fighter(150,350)#, punya_sheet, PUNYA_ANIMATION_STEPS)
-    fighter_2 = Fighter(900,350)
+    fighter_1 = Fighter(150,350,PUNYA_DATA, punya_sheet, PUNYA_ANIMATION_STEPS)
+    fighter_2 = Fighter(900,350,TU_MAN_DATA,tu_man_sheet ,TU_MAN_ANIMATION_SETPS)
 
     #กำหนดสี
     RED = (255, 0, 0)
