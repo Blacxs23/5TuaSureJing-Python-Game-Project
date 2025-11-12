@@ -27,12 +27,12 @@ def main_game(screen):
 
     # define fighter variables
     PUNYA_SIZE = 80
-    PUNYA_SCALE = 1
-    PUNYA_OFFSET = [0,0]
+    PUNYA_SCALE = 2
+    PUNYA_OFFSET = [30,0]
     PUNYA_DATA = [PUNYA_SIZE,PUNYA_SCALE,PUNYA_OFFSET]
     TU_MAN_SIZE = 80
-    TU_MAN_SCALE = 1
-    TU_MAN_OFFSET = [0,0]
+    TU_MAN_SCALE = 2
+    TU_MAN_OFFSET = [30,0]
     TU_MAN_DATA = [TU_MAN_SIZE,TU_MAN_SCALE,TU_MAN_OFFSET]
 
     #import background image
