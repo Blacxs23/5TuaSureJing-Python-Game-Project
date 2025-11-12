@@ -45,7 +45,7 @@ def main_game(screen):
 
     # load spritesheets
     punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel.png").convert_alpha()
-    tu_man_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel.png").convert_alpha()
+    tu_man_sheet = pygame.image.load("New-game/asset/character/tu_man/tu_man_idel.png").convert_alpha()
 
     #define number of steps in each animation
     PUNYA_ANIMATION_STEPS = [1, 1, 1, 1, 1, 1]
@@ -53,7 +53,7 @@ def main_game(screen):
 
     #create two instances of fighters
     fighter_1 = Fighter(1,150,350,False,PUNYA_DATA, punya_sheet, PUNYA_ANIMATION_STEPS)
-    fighter_2 = Fighter(2,900,350,True,TU_MAN_DATA,tu_man_sheet ,TU_MAN_ANIMATION_SETPS)
+    fighter_2 = Fighter(2,900,350,False,TU_MAN_DATA,tu_man_sheet ,TU_MAN_ANIMATION_SETPS)
 
     #กำหนดสี
     RED = (255, 0, 0)
@@ -75,6 +75,7 @@ def main_game(screen):
         
         #move fighter
         fighter_1.move(screen_width, screen_height, screen, fighter_2)
+        fighter_2.move(screen_width, screen_height, screen, fighter_1)
 
         # zetta
         # update fighter
