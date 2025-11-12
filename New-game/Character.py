@@ -36,7 +36,7 @@ class Fighter():
                     continue
 
                 temp_img = sprite_sheet.subsurface(rect_x, rect_y, self.size, self.size)
-                temp_img = pygame.transform.scale(temp_img, (80, 200))  # หรือขนาดที่ต้องการ
+                temp_img = pygame.transform.scale(temp_img, (80, 100))  # หรือขนาดที่ต้องการ
                 temp_img_list.append(temp_img)
             animation_list.append(temp_img_list)
 
