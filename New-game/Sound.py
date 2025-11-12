@@ -8,7 +8,7 @@ pygame.mixer.music.load("New-game/asset/sound/music1.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
-pygame.mixer.music.load("New-game/asset/sound/music2.mp3")
+pygame.mixer.music.load("New-game/asset/sound/musiclobby.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
