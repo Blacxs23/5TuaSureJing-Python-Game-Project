@@ -44,8 +44,8 @@ def main_game(screen):
         screen.blit(scaled_bg, (0,0))
 
     # load spritesheets
-    punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png").convert_alpha()
-    tu_man_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel1.png").convert_alpha()
+    punya_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel.png").convert_alpha()
+    tu_man_sheet = pygame.image.load("New-game/asset/character/punya/punya_idel.png").convert_alpha()
 
     #define number of steps in each animation
     PUNYA_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
