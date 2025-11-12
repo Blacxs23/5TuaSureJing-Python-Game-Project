@@ -32,15 +32,12 @@ class Fighter():
             self.jump = True
             
         #attack
-        if key[pygame.K_r] or key[pygame.K_t]:
+        if key[pygame.K_r]:
             self.attack(surface)
 
             #determine which attack was uesd
             if key[pygame.K_r]:
-                self.attack_type = 1
-            if key[pygame.K_t]:
-                self.attack_type = 2   
-
+                self.attack_type = 1 
 
         #apply gravity
         self.vel_y += gravity
