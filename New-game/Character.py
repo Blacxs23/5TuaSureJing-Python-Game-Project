@@ -1,7 +1,5 @@
 import pygame
 
-# This replaces the old Fighter __init__ constructor
-# It builds a fighter as a dictionary containing all states and attributes
 def create_fighter(player, x, y, flip, data, sprite_sheet, animation_steps):
     fighter = {
         "player": player,
