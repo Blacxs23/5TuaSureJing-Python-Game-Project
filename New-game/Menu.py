@@ -76,16 +76,6 @@ credit_click_rect.centerx = screen_w // 2
 credit_click_rect.centery = 410
 # screen.blit(credit_click,credit_click_rect)
 
-# ----- popup -----
-
-# control_popup
-# control_popup = pygame.image.load(" ")
-# control_popup = pygame.transform.scale(control_popup,(500,600))
-# control_popup_rect = control_popup.get_rect()
-# control_popup_rect.centerx = screen_w // 2
-# control_popup_rect.centery = 290
-# screen.blit(control_popup,control_popup_rect)
-
 current_play = "play"
 current_control = "control"
 current_credit = "credit"
