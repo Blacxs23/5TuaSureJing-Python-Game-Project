@@ -78,7 +78,7 @@ def move(f, screen_width, screen_height, surface, target):
                 attack(f, target)
                 f["attack_type"] = 1
         elif f["player"] == 2:
-            # Player 2 controls (J,L,I,U)
+            # Player 2 controls (J,L,I,O)
             if key[pygame.K_j]:
                 dx = -speed; f["running"] = True
             if key[pygame.K_l]:
@@ -113,7 +113,6 @@ def move(f, screen_width, screen_height, surface, target):
     # Apply movement
     f["rect"].x += dx
     f["rect"].y += dy
-
 
 # Updates animation state (idle, run, jump, attack, hit, death)
 def update(f):
@@ -182,7 +181,8 @@ def update_action(f, new_action):
 
 # Draws the fighter and its hitbox (for debug visualization)
 def draw(f, surface):
-    
+    # pygame.draw.rect(surface, (255, 0, 0), f["rect"])  # Red box = hitbox
+    surface.blit(
         f["image"],
         (f["rect"].x - (f["offset"][0] * f["image_scale"]),
          f["rect"].y - (f["offset"][1] * f["image_scale"]))
