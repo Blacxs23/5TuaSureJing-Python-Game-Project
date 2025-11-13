@@ -17,10 +17,10 @@ pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
 #play attack and take hit sounds
-attack1_sound = mixer.Sound("New-game/asset/sound/attack1.wav")
-attack1_sound.set_volume(0.3)
-attack2_sound = mixer.Sound("New-game/asset/sound/attack2.wav")
-attack2_sound.set_volume(0.3)
+punch1_sound = mixer.Sound("New-game/asset/sound/punch1.wav")
+punch1_sound.set_volume(0.3)
+punch2_sound = mixer.Sound("New-game/asset/sound/punch2.wav")
+punch2_sound.set_volume(0.3)
 
 takehit1_sound = mixer.Sound("New-game/asset/sound/takehit.wav")
 takehit1_sound.set_volume(0.3)
