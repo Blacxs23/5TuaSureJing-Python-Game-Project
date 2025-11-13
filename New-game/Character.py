@@ -224,5 +224,4 @@ class Fighter():
             self.update_time = pygame.time.get_ticks()
 
     def draw(self, surface):
-        pygame.draw.rect(surface, (255, 0, 0), self.rect)
         surface.blit(self.image,(self.rect.x - (self.offset[0]*self.image_scale),self.rect.y - (self.offset[1]*self.image_scale)))
