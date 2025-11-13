@@ -182,8 +182,7 @@ def update_action(f, new_action):
 
 # Draws the fighter and its hitbox (for debug visualization)
 def draw(f, surface):
-    pygame.draw.rect(surface, (255, 0, 0), f["rect"])  # Red box = hitbox
-    surface.blit(
+    
         f["image"],
         (f["rect"].x - (f["offset"][0] * f["image_scale"]),
          f["rect"].y - (f["offset"][1] * f["image_scale"]))
