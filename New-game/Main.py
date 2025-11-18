@@ -3,6 +3,9 @@ from Character import Fighter
 pygame.init()
 from pygame import mixer
 
+#inport font pygame module
+pygame.font.init()
+
 def main_game(screen):
     #setting game window
     screen_width = 1024
@@ -61,19 +64,31 @@ def main_game(screen):
     fighter_1 = Fighter(1,150,350,False,PUNYA_DATA, punya_sheet, PUNYA_ANIMATION_STEPS)
     fighter_2 = Fighter(2,900,350,False,TU_MAN_DATA,tu_man_sheet ,TU_MAN_ANIMATION_SETPS)
 
-    #กำหนดสี
-    RED = (255, 0, 0)
-    YELLOW = (255, 255, 0)
-    WHITE = (255, 255, 255)
+    clock.tick(60)  # Limit FPS
+
+    pygame.display.update()
+
+    font = pygame.font.Font(None, 60)
 
     run = True
     while run: #all running game code must in this while loop
-        
+
         #add clock tick to limit player movement
         clock.tick(FPS)
 
         #draw bg
         draw_bg()
+
+        #time
+        time_now = pygame.time.get_ticks() // 1000  # seconds since start
+        countdown = 60 - time_now
+
+        #shi 19/11
+        #make clock
+        #load font
+
+        text = font.render(str(countdown), True, (255, 255, 255))
+        screen.blit(text, (495, 17))
 
         #แสดงหลอดเลือด   #stamp
         draw_health_bar(fighter_1.health, 30, 20)
@@ -103,5 +118,7 @@ def main_game(screen):
             
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 run = False
+        if countdown == 0:
+            pygame.quit()
 
     return
