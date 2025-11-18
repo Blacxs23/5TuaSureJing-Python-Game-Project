@@ -1,8 +1,10 @@
 import pygame
 import sys
 from Main import main_game
+from pygame import mixer
 
 pygame.init()
+mixer.init()
 
 # Screen dimensions
 screen_w = 1024
@@ -13,6 +15,11 @@ pygame.display.set_caption("DTI Fighter - Menu")
 # background 1
 bg_start = pygame.image.load("New-game/asset/bg/bg1_dome.png")
 # screen.blit(bg_start,(0,0))
+
+#import music
+pygame.mixer.music.load("New-game/asset/sound/musiclobby.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1, 0.0, 5000)
 
 # logo
 logo = pygame.image.load("New-game/asset/logo/dti_fighter_logo.png")

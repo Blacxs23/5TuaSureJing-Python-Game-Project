@@ -1,6 +1,7 @@
 import pygame
 from Character import Fighter
 pygame.init()
+from pygame import mixer
 
 def main_game(screen):
     #setting game window
@@ -37,6 +38,11 @@ def main_game(screen):
 
     #import background image
     bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
+
+    #import sound
+    pygame.mixer.music.load("New-game/asset/sound/music1.mp3")
+    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.play(-1, 0.0, 5000)
 
     #function for drawing background
     def draw_bg():
