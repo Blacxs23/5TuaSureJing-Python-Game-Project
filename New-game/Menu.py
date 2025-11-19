@@ -1,6 +1,7 @@
 import pygame
 import sys
 from Main import main_game
+from Control import control
 from pygame import mixer
 
 pygame.init()
@@ -113,6 +114,7 @@ def menu():
 
                 if current_control == "control":
                     if control_default_rect.collidepoint(mouse_pos):
+                        control(screen)
                         print("control!")
                     
                 if current_credit == "credit":
