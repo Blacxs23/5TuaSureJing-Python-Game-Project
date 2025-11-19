@@ -119,6 +119,7 @@ def main_game(screen):
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 run = False
         if countdown == 0:
+            run = False
             pygame.quit()
 
     return
