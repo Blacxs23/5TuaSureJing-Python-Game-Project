@@ -31,5 +31,3 @@ dead_sound1 = mixer.Sound("New-game/asset/sound/dead1.wav")
 dead_sound1.set_volume(0.3)
 dead_sound2 = mixer.Sound("New-game/asset/sound/dead2.wav")
 dead_sound2.set_volume(0.3)
-
-

@@ -42,6 +42,18 @@ def main_game(screen):
     #import background image
     bg_image = pygame.image.load("New-game/asset/bg/bg2_boonchoo.png")
 
+    #import game over image
+    gameover_img = pygame.image.load("New-game/asset/bg/Gameover.png")
+    gameover_img = pygame.transform.scale(gameover_img, (1024, 576))  # fit window
+
+    #make game over page
+    def gameover_page(screen, gameover_img):
+        screen.blit(gameover_img, (0, 0))
+        pygame.display.update()
+        pygame.time.delay(2000)  # show for 2 seconds
+        pygame.quit()
+        quit()
+
     #import sound
     pygame.mixer.music.load("New-game/asset/sound/music1.mp3")
     pygame.mixer.music.set_volume(0.5)
@@ -118,8 +130,8 @@ def main_game(screen):
             
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 run = False
-        if countdown == 0:
-            run = False
-            pygame.quit()
+        
+        if countdown <= 0:
+            gameover_page(screen, gameover_img)
 
     return
