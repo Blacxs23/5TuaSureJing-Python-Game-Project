@@ -2,6 +2,7 @@ import pygame
 import sys
 from Main import main_game
 from Control import control
+from Credit import credit
 from pygame import mixer
 
 pygame.init()
@@ -119,6 +120,7 @@ def menu():
                     
                 if current_credit == "credit":
                     if credit_default_rect.collidepoint(mouse_pos):
+                        credit(screen)
                         print("credit!")
 
         current_mouse_pos = pygame.mouse.get_pos()
