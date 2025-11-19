@@ -25,7 +25,11 @@ class Fighter():
         self.hit = False
         self.health = 100
         self.alive = True
+        self.actions = {"idel": 0,"run": 1,"jump": 2,"Attack1": 3,"Attack2": 4,"RunAttack": 5,"hit": 6,"death": 7}#เกี่ยวกับอนิเมชั่น
+        self.update_action(self.actions["RunAttack"])#เกี่ยวกับอนิเมชั่น
 
+        
+        
     # zetta 12/11/25
     def load_images(self, sprite_sheet, animation_steps):
         animation_list = []
@@ -48,6 +52,18 @@ class Fighter():
             animation_list.append(temp_img_list)
 
         return animation_list
+
+
+    def load_animations(self, base_path, animation_steps):
+        for action, frame_count in animation_steps.items():
+            temp_list = []
+            path = f"{base_path}/{action}"
+            for i in range(frame_count):
+                img = pygame.image.load(f"{path}/{i}.png").convert_alpha()
+                img = pygame.transform.scale(img, (img.get_width() * self.image_scale,
+                                                   img.get_height() * self.image_scale))
+                temp_list.append(img)
+            self.animation_list.append(temp_list)
 
 
     # move function
@@ -141,10 +157,12 @@ class Fighter():
         elif self.hit == True:
             self.update_action(5)#5:hit
         elif self.attacking == True:
-            if self.attack_type == 1:
-                self.update_action(3)#3:attack1
-            elif self.attack_type == 2:
-                self.update_action(4)#4:attack2
+          if self.running:#เกี่ยวกับอนิเมชั่น
+             self.update_action(self.actions["RunAttack"])#เกี่ยวกับอนิเมชั่น
+          elif self.attack_type == 1:#เกี่ยวกับอนิเมชั่น
+             self.update_action(self.actions["Attack1"])#เกี่ยวกับอนิเมชั่น
+          elif self.attack_type == 2:#เกี่ยวกับอนิเมชั่น
+              self.update_action(self.actions["Attack2"])#เกี่ยวกับอนิเมชั่น
         elif self.jump == True:
             self.update_action(2)#2:jump
         elif self.running == True:
@@ -209,7 +227,10 @@ class Fighter():
         if self.attack_cooldown == 0:
             #execute attack
             self.attacking = True
-            attacking_rect = pygame.Rect(self.rect.centerx - (2 * self.rect.width * self.flip), self.rect.y, 2 * self.rect.width, self.rect.height)
+            if  self.flip:
+                attacking_rect = pygame.Rect(self.rect.centerx - (2 * self.rect.width * self.flip), self.rect.y, 2 * self.rect.width, self.rect.height)
+            else:
+                attacking_rect = pygame.Rect(self.rect.right, self.rect.y, self.rect.width, self.rect.height)
             if attacking_rect.colliderect(target.rect):
                 target.health -= 10
                 target.hit = True 
@@ -224,4 +245,6 @@ class Fighter():
             self.update_time = pygame.time.get_ticks()
 
     def draw(self, surface):
-        surface.blit(self.image,(self.rect.x - (self.offset[0]*self.image_scale),self.rect.y - (self.offset[1]*self.image_scale)))
+        img = pygame.transform.flip(self.image, self.flip, False)#เกี่ยวกับอนิเมชั่น
+        surface.blit(img, (self.rect.x - (self.offset[0]*self.image_scale),#เกี่ยวกับอนิเมชั่น
+                   self.rect.y - (self.offset[1]*self.image_scale)))#เกี่ยวกับอนิเมชั่น
