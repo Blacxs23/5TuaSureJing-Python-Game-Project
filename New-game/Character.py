@@ -95,7 +95,7 @@ class Fighter():
                 #attack
                 if key[pygame.K_e]:
                     self.attack(target)
-                    #determine which attack was uesd
+                    #which attack was uesd
                     if key[pygame.K_e]:
                         self.attack_type = 1 
 
@@ -115,7 +115,7 @@ class Fighter():
                 #attack
                 if key[pygame.K_u]:
                     self.attack(target)
-                    #determine which attack type was used
+                    # which attack type was used
                     if key[pygame.K_u]:
                         self.attack_type = 1
 
@@ -123,7 +123,7 @@ class Fighter():
         self.vel_y += gravity
         dy += self.vel_y
 
-        #ensure player stays on screen
+        #make player stays on screen
         if self.rect.left + dx < 0:
             dx =  -self.rect.left
         if self.rect.right + dx > screen_width:
@@ -133,7 +133,7 @@ class Fighter():
             self.jump = False
             dy = screen_height - 50 - self.rect.bottom
 
-        #ensure players face each other
+        #make players face each other
         if target.rect.centerx > self.rect.centerx:
             self.flip = False
         else:
