@@ -19,7 +19,7 @@ def main_game(screen):
 
     #กำหนดสี  #stamp
     RED = (255, 0, 0)
-    YELLOW = (255, 255, 0)
+    GREEN = (0, 255, 0)
     WHITE = (255, 255, 255)
 
     #ฟังชั่นวาดหลอดเลือด  #stamp
@@ -27,7 +27,7 @@ def main_game(screen):
         ratio = health / 100
         pygame.draw.rect(screen, WHITE, (x - 2, y - 2, 404, 34))
         pygame.draw.rect(screen, RED, (x, y, 400, 30))
-        pygame.draw.rect(screen, YELLOW, (x, y, 400 * ratio, 30))
+        pygame.draw.rect(screen, GREEN, (x, y, 400 * ratio, 30))
 
     # define fighter variables
     PUNYA_SIZE = 160
@@ -69,7 +69,7 @@ def main_game(screen):
     pygame.display.update()
 
     font = pygame.font.Font(None, 60)
-
+    
     run = True
     while run: #all running game code must in this while loop
 
@@ -88,7 +88,7 @@ def main_game(screen):
         #load font
 
         text = font.render(str(countdown), True, (255, 255, 255))
-        screen.blit(text, (495, 17))
+        screen.blit(text, (493, 19))
 
         #แสดงหลอดเลือด   #stamp
         draw_health_bar(fighter_1.health, 30, 20)
